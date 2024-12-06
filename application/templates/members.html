@@ -1,0 +1,158 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+<style>
+    h3{
+        text-align: center;
+    }
+</style>
+
+{% if messages %}
+        {%for message in messages %}
+<div class="alert {{message.tags}}">{{ message }}</div>
+        {%endfor%}
+{% endif%}
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+<table class="table table-dark table-striped">
+
+    <thead>
+    <tr><h3 >All Registered Student List</h3></tr>
+        <tr>
+          <th>Name</th>
+          <th>phone_no</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th></th>
+            <th></th>
+        </tr>
+    </thead>
+  <tbody>
+  {% for student in data %}
+  <tr>
+<!--    has no % ginga-->
+    <td>{{ student.name }}</td>
+    <td>{{ student.phone_no }}</td>
+    <td>{{ student.email }}</td>
+    <td>{{ student.password }}</td>
+<!--      check on details instating-->
+<!--      student is variable i created on (for student data)-->
+    <td><a href="{% url 'edit' student.id %}" class="btn btn-success" type="button">EDIT STUDENT</a></td>
+      <td><a href="{% url 'delete' student.id %}" class="btn btn-danger" type="button"
+             onclick="return confirm('are you sure you want to delete the student?')">DELETE STUDENT</a></td>
+  </tr>
+
+  {% endfor %}
+  </tbody>
+
+</table>
+        </div>
+    <div class="col-md-1"></div>
+</div>
+
+
+<div class="row">
+<div class="col-md-1"></div>
+    <div class="col-md-10">
+<!--membership table-->
+<table class="table table-dark table-striped">
+    <thead>
+    <tr><h3> 1 month members</h3></tr>
+    <tr>
+        <th>Name</th>
+        <th>Phone number</th>
+        <th>start date</th>
+        <th>end date</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for monthly_member in monthly_data %}
+    <tr>
+        <td>{{ monthly_member.name }}</td>
+        <td>{{ monthly_member.phone_no }}</td>
+        <td>{{ monthly_member.start_date }}</td>
+        <td>{{ monthly_member.end_date }}</td>
+
+        <td><a href="{% url 'monthly_subscribers' monthly_member.id %}" class="btn btn-success" type="button">UPDATE</a></td>
+        <td><a href="{% url 'delete_monthly_subscribers' monthly_member.id %}" class="btn btn-danger" type="button"
+                                          ONCLICK="return confirm('are you sure you want to delete this individual')">DELETE STUDENT</a></td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+        </div>
+    <div class="col-md-1"></div>
+    </div>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+<table class="table table-dark table-striped">
+    <tr><h3>6 months members</h3></tr>
+    <tr>
+        <th>Name</th>
+        <th>Phone number</th>
+        <th>start date</th>
+        <th>end date</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tbody>
+    {% for six_months in half_data %}
+    <tr>
+        <td>{{ six_months.name }}</td>
+        <td>{{ six_months.phone_no }}</td>
+        <td>{{ six_months_start_date }}</td>
+        <td>{{ six_months.end_date }}</td>
+
+        <td><a href="{% url 'half_subscribers' six_months.id %}" class="btn btn-success" type="submit">UPDATE</a></td>
+        <td><a href="{% url 'delete_half_subscribers' six_months.id %}" class="btn btn-danger" type="submit"
+                       ONCLICK="return confirm('are you sure you want to delete this individual')">DELETE</a></td>
+    </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+        </div>
+    <div class="col-md-1"></div>
+    </div>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+<table class="table table-dark table-striped">
+    <tr><h3>Yearly Members</h3></tr>
+    <tr>
+        <th>Name</th>
+        <th>Phone number</th>
+        <th>start date</th>
+        <th>end date</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tbody>
+    {% for yearly in yearly_data %}
+    <tr>
+        <td>{{ yearly.name }}</td>
+        <td>{{ yearly.phone_no }}</td>
+        <td>{{ yearly.start_date }}</td>
+        <td>{{ yearly.end_date }}</td>
+        <td><a href="{% url 'yearly_subscribers' yearly.id %}" class="btn btn-success" type="submit">UPDATE</a></td>
+        <td><a href="{% url 'delete_yearly_subscribers' yearly.id %} "class="btn btn-danger" type="submit"
+                          ONCLICK="return confirm('are you sure you want to delete this individual')">DELETE</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+        </div>
+    <div class="col-md-0.5"></div>
+    </div>
+
+
+
+{% endblock %}
+

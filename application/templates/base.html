@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'style/main.css' %}">
+    <link rel="stylesheet" href="../../static/styles/gymbootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding:0 5% ;
+        }
+        nav img{
+            width: 100px;
+        }
+        nav ul{
+            display: flex;
+            /*background-color: aqua;*/
+            padding: 15px;
+        }
+        nav ul li{
+            list-style-type: none;
+            /*background-color: white;*/
+            padding: 12px 40px ;
+
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #bf4b03;
+            font-weight: bolder;
+            padding: 8px;
+            border-radius: 10px;
+            /*background-color: white;*/
+        }
+        nav ul li a:hover{
+            background-color: #0f5132;
+            color: white;
+            transition:0.2s;
+        }
+.footer{
+    background-color: black;
+    color: #bf4b03;
+    text-align: center;
+}
+.footer i{
+    padding-right: 24px;
+}
+    </style>
+
+</head>
+<body>
+<header>
+    <nav>
+        <a href=""><img src="../../static/images/logo.webp" alt=""></a>
+        <ul>
+            <li><a href="{% url 'index' %}">HOME</a></li>
+            <li><a href="{% url 'classes' %}"> CLASSES</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+            <li><a href="{% url 'register' %}">REGISTER</a></li>
+        </ul>
+    </nav>
+</header>
+
+{% block content %}
+
+{% endblock %}
+
+<footer class="footer">
+    <div></div>
+    <h4>For Support</h4>
+    <i class="fa fa-envelope" aria-hidden="true">   Email: cimanu88@gmil.com</i>
+
+    <i class="fa fa-phone-square" aria-hidden="true">  call us: 0748400973 / 0707478544</i>
+    <h4>follow us</h4>
+    <i class="fa fa-linkedin-square" aria-hidden="true">  Manu Ci</i>
+    <i class="fa fa-instagram" aria-hidden="true">  Ronoh.06</i>
+    <i class="fa fa-github" aria-hidden="true"> ronohh</i>
+
+    <p>@copyright Ronoh.o6</p>
+
+
+</footer>
+</body>
+</html>

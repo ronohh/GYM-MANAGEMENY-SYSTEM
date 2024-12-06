@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .background{
+        background-image: url("../../static/images/adult-1850925_1280.jpg");
+        height:100vh;
+        background-position: center;
+        background-size: cover;
+    }
+    .content{
+        font-weight: bolder;
+        color: white;
+        font-size: 80px;
+
+    }
+    .content p{
+        color: #fd721c;
+        margin-left: 40px;
+    }
+    .all-button{
+        background-color: #0f5132;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        padding: 8px;
+        font-weight: bolder;
+        text-align: center;
+    }
+    .all-button:hover{
+        background-color: #bf4b03;
+        color:white;
+        transition: 0.2s;
+    }
+    .about{
+        margin: 30px;
+        height: 70vh;
+    }
+    .about h1{
+        padding-top: 50px;
+    }
+</style>
+
+<section class="header">
+<div class="background">
+    <div class="content">
+        <p>Take a Step</p>
+        <p>Towards</p>
+        <p>Fitness</p>
+        <a href="" class="all-button" style="font-size: 20px; margin-left: 120px; ">FITNESS NOW</a>
+    </div>
+
+</div>
+</section >
+<section class="about">
+<div class="row" >
+
+        <div class="col-md-6">
+            <img src="../../static/images/movement-8255242_1280.webp" alt="" style="width:500px; height: 400px">
+     </div>
+        <div class="col-md-6">
+        <h1>Small Steps Equal Big Changes</h1>
+            <p>Getting into shape doesn’t have to be intimidating. Start putting your best fitness foot forward with an online training program that makes you the all star. Get guided workouts for your level of fitness, that you can do anywhere, and at your own pace.</p>
+            <a href="{% url 'register' %}" class="all-button">JOIN NOW</a>
+        </div>
+</div>
+    </section>
+
+
+<section class="about">
+    <div class="row">
+        
+        <div class="col-md-6">
+            <h1>Break Out of Old Habits</h1>
+    <p>It’s never too late to start focusing on your health. It’s just a matter of getting started. With our no-obligation, contract-free memberships, it’s easy to get your healthy habits going without the pressure. Feel the best you ever have. It all starts here.</p>
+    <a href="{% url 'register' %}" class="all-button">JOIN NOW</a>
+            </div>
+        <div class="col-md-6">
+            <img src="../../static/images/monstera-8476616_640.jpg" alt="" style="height: 400px; width:500px;">
+            </div>
+
+        </div>
+</section>
+
+{% endblock %}

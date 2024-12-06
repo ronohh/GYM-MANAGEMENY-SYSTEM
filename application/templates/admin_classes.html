@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .background{
+        background-image: url("../../static/images/fitness-6237345_1280.webp");
+        background-position: center;
+
+        height: 100vh;
+        /*background-size: cover;*/
+    }
+    .container{
+        background-color: #0f5132;
+        height: 420px;
+        width: 350px;
+        margin-top: 50px;
+        padding: 40px;
+        text-align: center;
+        color: white;
+    }
+    .container i{
+        padding-top: 8px;
+    }
+    .container p{
+        padding-top: 10px;
+    }
+    .all-button{
+        background-color: #bf4b03;
+        color: #ffffff;
+        border-radius: 8px;
+        text-decoration: none;
+        padding: 8px;
+        font-weight: bolder;
+        text-align: center;
+    }
+    .all-button:hover{
+        background-color: #0b0908;
+        color:white;
+        transition: 0.2s;
+    }
+    .trainee-section{
+        background-color: #0f5132;
+        height: 360px;
+        width: 400px;
+        margin-top: 30px;
+
+        /*padding: 40px;*/
+        text-align: center;
+        color: white;
+}
+    .trainee-section p img{
+        height: 60px;
+        width: 60px;
+        border-radius: 400px;
+        zoom: 30px;
+    }
+
+</style>
+<section class="classes">
+<div class="background">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="container">
+            <h3>Monthly package</h3>
+                <i class="fa fa-check" aria-hidden="true" >   Free 1week training </i><br>
+                    <i class="fa fa-check" aria-hidden="true">   Access to morning and evening classes </i><br>
+                    <i class="fa fa-times" aria-hidden="true">   Weekend classes</i><br>
+                    <i class="fa fa-times" aria-hidden="true">   Personal trainee</i><br>
+                <i class="fa fa-times" aria-hidden="true">   Cannot be used by a couple</i><br>
+                <i class="fa fa-times" aria-hidden="true">   Family package</i><br>
+                    <i class="fa fa-times" aria-hidden="true">   Membership ticket trips</i><br>
+            <p>FEE: KSHs 2500</p><br>
+                    <a href="{% url 'monthly_package' %}" class="all-button">BOOK NOW</a>
+                    </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="container">
+                <h3>6 MONTHS Membership</h3>
+                <i class="fa fa-check" aria-hidden="true">   Access to morning and evening classes</i>
+                    <i class="fa fa-check" aria-hidden="true">   Access to weekend classes</i>
+                    <i class="fa fa-check" aria-hidden="true">   Can be used by a couple </i>
+                    <i class="fa fa-times" aria-hidden="true">   Personal trainee</i><br>
+                    <i class="fa fa-times" aria-hidden="true">   Family package</i>
+                    <i class="fa fa-times" aria-hidden="true">   membership ticket to club trips</i>
+
+
+                <p>FEE: KSHs 15 000</p>
+                    <a href="{% url 'half_package' %}" class="all-button">BOOK NOW</a>
+                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="container">
+                    <h3>Yearly Membership</h3>
+                    <i class="fa fa-check" aria-hidden="true">   Access to morning and evening classes</i>
+                    <i class="fa fa-check" aria-hidden="true">   Access to weekend classes</i>
+                    <i class="fa fa-check" aria-hidden="true">   Membership ticket club trips</i>
+                    <i class="fa fa-check" aria-hidden="true">   Can choose personal trainee</i>
+                    <i class="fa fa-check" aria-hidden="true">   It's a family package</i>
+                    <p>FEE: KSHs 30 000</p>
+                    <a href="{% url 'yearly_package' %}" class="all-button">BOOK NOW</a>
+                </div>
+            </div>
+        </div>
+</div>
+    </section>
+<section class="background-trainee" style=" background-color: black">
+    <div  class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <div class="trainee-section">
+            <u><h3>Morning Trainees</h3></u>
+            <p><img src="../../static/images/border2.jpg" alt="">Chief Instructor</p>
+            <h5>Colleagues</h5>
+            <u><h6>FEMALE TRAINEES</h6></u>
+                <ol>
+                    <li>Jecinta Akinyi</li>
+            <li>Williams Ruto</li>
+            <li>serinary wataita</li>
+                </ol>
+
+
+            <u><h6>MALE TRAINEES</h6></u>
+                <ol>
+                    <li>kipsigis aembu</li>
+            <li>Christian Genesis</li>
+            <li>Rush Amendment</li>
+                </ol>
+
+                </div>
+        </div>
+
+
+
+        <div class="col-md-5">
+            <div class="trainee-section">
+            <u><h3>Evening Trainees</h3></u>
+
+            <p><img src="../../static/images/boerder 1.jpg" alt="">Chief Instructor</p>
+            <h5>colleagues</h5>
+                <u><H6>FEMALE TRAINEES</H6></u>
+                <ol>
+                    <li>Arusha Nairobi</li>
+            <li>Tahidi Machachari</li>
+            <li>Rubis Poa</li>
+                </ol>
+
+            <u><H6> MALE TRAINEES </H6></u>
+                <ol>
+                    <li>Desk  Chair</li>
+            <li>Safaricom Airtel</li>
+            <li>Tecno Heat</li>
+                </ol>
+
+                </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+<!--create trainee folder-->
+<!--ladies and gentlemen three each-->
+<!--package for 6 months and year membership -->
+<!--create a membership program for a month and year-->

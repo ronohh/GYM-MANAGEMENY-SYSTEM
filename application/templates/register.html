@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+<style>
+    .background{
+        /*margin: 20px;*/
+       background-image: url("../../static/images/adult-1850925_1280.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 96vh;
+    }
+    .all-button{
+        background-color: #0f5132;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        padding: 8px;
+        font-weight: bolder;
+        width: 100%;
+
+    }
+    .all-button:hover{
+        background-color: #bf4b03;
+        color:white;
+        transition: 0.2s;
+    }
+    .container{
+        text-align: center;
+        padding-top: 40px;
+        /*background-color: black;*/
+        color: #147045;
+    }
+    .container h3{
+        background-color: #0f5132;
+        color: white;
+        padding: 8px;
+        width: 100%;
+    }
+</style>
+    <body>
+    <div class="background">
+<div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="container">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <h3>Enter Your Details</h3>
+                    {{ form.as_p }}
+                <button class="all-button">Register </button>
+                    <p style="font-size: larger">Already have an account? </p>
+                        <a href="{% url 'login' %}" class="all-button">log in</a>
+            </form>
+        </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+        </div>
+
+    </body>
+
+{% endblock %}

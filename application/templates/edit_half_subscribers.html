@@ -1,0 +1,15 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+
+<h3>EDIT STUDENT SUBSCRIPTION</h3>
+<form action="" method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button class="btn btn-success" type="submit">UPDATE</button>
+    <a href="" class="btn-danger">cancel</a>
+</form>
+{% endblock %}

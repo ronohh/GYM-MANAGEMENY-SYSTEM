@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  .background{
+    background-color: #bf4b03;
+    /*background-image: url("../../static/images/adult-1850925_1280.jpg");*/
+    background-position: center;
+    background-size: cover;
+    height: 76vh;
+  }
+.container{
+  background-color: black;
+  color: #0f5132;
+  text-align: center;
+  margin: 50px;
+  padding: 50px 50px;
+  border-radius: 12px;
+}
+.all-button{
+        background-color: #0f5132;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        padding: 8px;
+        font-weight: bolder;
+        text-align: center;
+  width: 100%;
+    }
+.all-button:hover{
+        background-color: #bf4b03;
+        color:white;
+        transition: 0.2s;
+    }
+</style>
+<div class="background">
+  <div class="row">
+  <div class="col-md-6" style="padding-top: 90px; font-size: large;padding-left: 80px;font-weight: bold">
+    <p>"Your only limit is you." Every time you push through a tough workout, you're proving to yourself that you can achieve more than you thought possible. Keep challenging your limits.</p>
+  <h7>keep moving ... You're Stronger than yesterday.</h7>
+  </div>
+  <div class="col-md-4">
+    <div class="container">
+
+    <form action="" method="POST">
+      {% csrf_token %}
+
+      {{ form.as_p }}
+      <button type="submit" class="all-button" >log in</button>
+      <p>Don't have an account?</p>
+      <a href="{% url 'register' %}" > click me to Register </a>
+    </form>
+  </div>
+  </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

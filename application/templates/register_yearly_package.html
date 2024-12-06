@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="row" style="background-color: black;height: 55vh">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+<form action="" method="POST" style="background-color: #bf4b03; text-align: center">
+
+ {% csrf_token %}
+    <h1>Enter Details</h1>
+
+  {{ form.as_p }}
+
+  <button class="btn btn-success" type="submit"  style="width: 200px">Submit</button>
+</form>
+    </div>
+    <div class="col-md-3"></div>
+    </div>
+
+{% endblock %}

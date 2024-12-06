@@ -1,0 +1,34 @@
+{% extends 'admin_base.html'%}
+{% block content%}
+
+<body>
+    <div class="container">
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Members</h5>
+                <p class="card-text">{{ total_members }}</p>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Monthly_members</h5>
+                <p class="card-text">{{ monthly_members }}</p>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">6_months_members</h5>
+                <p class="card-text">{{ six_month_members }}</p>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title"> yearly_members</h5>
+                <p class="card-text">{{ yearly_members }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+{% endblock%}

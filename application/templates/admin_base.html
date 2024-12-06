@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'style/main.css' %}">
+    <link rel="stylesheet" href="../../static/styles/gymbootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font: 14px arial,sans-serif;
+
+        }
+        header{
+            padding:10px 20px;
+            background: #147045;
+        }
+        .header a img{
+            width: 80px;
+        }
+        .container{
+            width:100%;
+            background: #bf4b03;
+
+        }
+        .nav, .section{
+            float:left;
+            padding:20px;
+            min-height: 170px;
+            box-sizing: border-box;
+        }
+        .nav {
+            width: 20%;
+
+            background: #d4d7dc;
+        }
+        .section{
+            width:80%;
+        }
+        .nav ul{
+            list-style:none;
+            line-height:24px;
+            padding:0px;
+        }
+        .nav  ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .clearfix:after {
+            content:".";
+            display: block;
+            height:0;
+            clear: both;
+            visibility: hidden;
+        }
+
+.footer{
+    background-color: black;
+    color: #bf4b03;
+    text-align: center;
+}
+.footer i{
+    padding-right: 24px;
+}
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <a href=""><img src="../../static/images/logo.webp" alt=""></a>
+    </div>
+    <div class="wrapper clearfix">
+        <div class="nav">
+            <ul>
+                <li><a href=" {% url 'admin_dashboard'%}">DASHBOARD</a></li>
+                <li><a href="{% url 'members' %}"> MEMBERS </a></li>
+                <li><a href="{% url 'new_admin'%}">ADD ADMIN </a></li>
+            </ul>
+        </div>
+        <div class="section">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer class="footer">
+    <div></div>
+    <h4>For Support</h4>
+    <i class="fa fa-envelope" aria-hidden="true">   Email: cimanu88@gmil.com</i>
+
+    <i class="fa fa-phone-square" aria-hidden="true">  call us: 0748400973 / 0707478544</i>
+    <h4>follow us</h4>
+    <i class="fa fa-linkedin-square" aria-hidden="true">  Manu Ci</i>
+    <i class="fa fa-instagram" aria-hidden="true">  Ronoh.06</i>
+    <i class="fa fa-github" aria-hidden="true"> ronohh</i>
+
+    <p>@copyright Ronoh.o6</p>
+
+
+</footer>
+</body>
+</html>
